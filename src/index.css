@@ -1,0 +1,83 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body{
+  margin: 0;
+  padding: 0;
+}
+
+/*
+.fundoBanner{
+  background-color:hsla(232,31%,87%,1);
+  background-image:
+  radial-gradient(at 40% 20%, #e0f6ff 0px, transparent 50%),
+  radial-gradient(at 80% 0%, #9dd9ff 0px, transparent 50%),
+  radial-gradient(at 0% 50%, hsla(195,0%,100%,1) 0px, transparent 50%),
+  radial-gradient(at 80% 50%, rgb(179, 223, 250) 0px, transparent 50%),
+  radial-gradient(at 0% 100%, hsla(197,100%,94%,1) 0px, transparent 50%),
+  radial-gradient(at 80% 100%, hsla(197,100%,94%,1) 0px, transparent 50%),
+  radial-gradient(at 0% 0%, hsla(199,100%,88%,1) 0px, transparent 50%);
+}
+*/
+
+.fundoBanner{
+  background-color:rgb(255, 255, 255);
+  background-image:
+  radial-gradient(at 40% 20%, #e0f6ff 0px, transparent 50%),
+  radial-gradient(at 80% 0%, #c1e7ff 0px, transparent 50%),
+  radial-gradient(at 0% 50%, hsla(195,0%,100%,1) 0px, transparent 50%),
+  radial-gradient(at 80% 50%, hsl(199, 29%, 39%) 0px, transparent 50%),
+  radial-gradient(at 0% 70%, hsl(199, 34%, 55%) 0px, transparent 50%),
+  radial-gradient(at 80% 100%, hsla(197,100%,94%,1) 0px, transparent 50%),
+  radial-gradient(at 0% 0%, rgb(123, 178, 204) 0px, transparent 50%);
+}
+
+.fundoServicos{
+  background-color:#dbe9f6;
+background-image:
+radial-gradient(at 39% 25%, hsla(207,59%,91%,1) 0px, transparent 50%),
+radial-gradient(at 80% 0%, hsla(206,58%,91%,1) 0px, transparent 50%),
+radial-gradient(at 0% 50%, #e0f5ff 0px, transparent 50%),
+radial-gradient(at 88% 46%, hsla(199,33%,54%,1) 0px, transparent 50%),
+radial-gradient(at 0% 100%, hsla(206,58%,91%,1) 0px, transparent 50%),
+radial-gradient(at 79% 100%, #dbeaf5 0px, transparent 50%),
+radial-gradient(at 0% 0%, hsla(207,59%,91%,1) 0px, transparent 50%);
+}
+
+
+.fundoCarta{
+  background-color:hsla(199,28%,39%,1);
+background-image:
+radial-gradient(at 40% 20%, hsla(199,28%,39%,1) 0px, transparent 50%),
+radial-gradient(at 80% 0%, #486e7f 0px, transparent 50%),
+radial-gradient(at 0% 50%, hsla(199,34%,55%,1) 0px, transparent 50%),
+radial-gradient(at 80% 50%, hsla(199,34%,55%,1) 0px, transparent 50%),
+radial-gradient(at 0% 100%, hsla(199,28%,39%,1) 0px, transparent 50%),
+radial-gradient(at 80% 100%, #659bb3 0px, transparent 50%),
+radial-gradient(at 0% 0%, hsla(199,34%,55%,1) 0px, transparent 50%);
+}
+
+.fundoBannerCel{
+  background-color:hsla(208,60%,91%,1);
+  background-image:
+  radial-gradient(at 40% 20%, hsla(207,59%,91%,1) 0px, transparent 50%),
+  radial-gradient(at 80% 0%, hsla(198,33%,54%,1) 0px, transparent 50%),
+  radial-gradient(at 0% 50%, hsla(206,58%,91%,1) 0px, transparent 50%),
+  radial-gradient(at 80% 50%, hsla(203,100%,87%,1) 0px, transparent 50%),
+  radial-gradient(at 0% 100%, hsla(203,100%,87%,1) 0px, transparent 50%),
+  radial-gradient(at 80% 100%, hsla(195,50%,72%,1) 0px, transparent 50%),
+  radial-gradient(at 9% 2%, hsla(198,33%,54%,1) 0px, transparent 50%);
+}
+
+.fundoServicosCel{
+  background-color:hsla(206,60%,91%,1);
+  background-image:
+  radial-gradient(at 14% 47%, hsla(199,44%,64%,1) 0px, transparent 50%),
+  radial-gradient(at 80% 0%, hsla(205,56%,90%,1) 0px, transparent 50%),
+  radial-gradient(at 0% 50%, hsla(355,100%,93%,1) 0px, transparent 50%),
+  radial-gradient(at 80% 50%, hsla(199,44%,64%,1) 0px, transparent 50%),
+  radial-gradient(at 0% 100%, hsla(203,100%,87%,1) 0px, transparent 50%),
+  radial-gradient(at 80% 100%, hsla(205,55%,90%,1) 0px, transparent 50%),
+  radial-gradient(at 0% 0%, hsla(205,56%,90%,1) 0px, transparent 50%);
+}
