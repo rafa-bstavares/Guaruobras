@@ -4,6 +4,7 @@ import img1Banner from "../../assets/images/imgBanner (1).png"
 import img1BannerCel from "../../assets/images/semFundoBannerCel.png"
 import { useGSAP } from "@gsap/react"
 import gsap from "gsap"
+import logo from "../../assets/images/guaruLogo.jpg"
 
 
 
@@ -40,7 +41,11 @@ export default function Banner(){
 
     return(
         <div className="lg:fundoBanner fundoBannerCel h-screen bg-[#f9faff] relative overflow-hidden flex lg:px-14 px-4 py-10 w-full ">{/*e1f6ff COLOQUEI H-SCREEN AQUI NO MOBILE TBM ANTES TAVA LG:H-SCREEN*/}
-            <div className=" flex lg:flex-row flex-col w-full relative z-10">
+            <div className="absolute top-4 left-4 px-6 py-2 rounded-full bg-white z-20 overflow-hidden flex gap-4 items-center">
+                <img className="lg:w-[4vw] w-[12vw] h-auto" src={logo} alt="imagem logo guaruobras" />
+                <div className="text-[10px] lg:text-xl">(11) 953574160</div>
+            </div>
+            <div className=" flex lg:flex-row flex-col w-full relative z-10 mt-12 lg:mt-0">
                 <div className="flex flex-col items-center lg:items-stretch text-[#0c2236] lg:w-[55vw] lg:h-screen justify-center">
                     <div className=' font-Fahk text-center lg:text-start 2xl:[font-size:65px] 2xl:[line-height:70px] xl:[font-size:55px] xl:[line-height:60px] lg:[font-size:40px] lg:[line-height:45px] min-[400px]:[font-size:30px] min-[400px]:[line-height:33px] [font-size:25px] [line-height:30px] lg:[letter-spacing:-3px] [letter-spacing:-1.5px] lg:mb-6 mb-3'>
                         <div className=" overflow-hidden flex lg:justify-start justify-center texto1 text-center">{/* SEM O FLEX A ANIMAÇÃO N FUNCIONA */}
@@ -71,9 +76,11 @@ export default function Banner(){
                     </div>
                     <div className=' lg:self-start self-center relative group cursor-pointer'>
                         <div className='absolute rounded-full inset-0 border-[#dbeaf5] border-2 border-solid lg:translate-x-3 translate-x-2 lg:translate-y-3 translate-y-2 z-20'></div>
-                        <div className='rounded-full px-12 py-4 text-center bg-white relative z-30 group-hover:translate-x-3 group-hover:translate-y-3 transition-all duration-500 ease-in-out'>
-                            Solicite seu Orçamento Grátis Agora
-                        </div>
+                        <a href="https://wa.me/5511953574160" target="_blank">
+                            <div className='rounded-full px-12 py-4 text-center bg-white relative z-30 group-hover:translate-x-3 group-hover:translate-y-3 transition-all duration-500 ease-in-out'>
+                                Solicite seu Orçamento Grátis Agora
+                            </div>
+                        </a>
                     </div>
                 </div>
                 <div className='flex justify-center items-end pb-16 lg:w-[45vw] w-full lg:h-screen relative -order-1 lg:order-1'>

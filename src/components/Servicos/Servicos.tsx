@@ -8,19 +8,21 @@ import escritorioImg from "../../assets/images/escritorioServicos.jpg"
 import entulhoImg from "../../assets/images/entulhoServicos.jpg"
 import comercioImg from "../../assets/images/comercioServicos.jpg"
 import Titulo from "../Titulo/Titulo"
-import { useRef } from "react"
+
+import { RefObject, useRef } from "react"
+
+type Props = {
+    servicosRef: RefObject<HTMLDivElement>
+}
 
 
-
-
-export default function Servicos(){
+export default function Servicos({servicosRef}: Props){
 
     gsap.registerPlugin(ScrollTrigger)
     gsap.registerPlugin(useGSAP)
 
     const pinImgsContainer = useRef(null)
     const containerImgs = useRef(null)
-    const containerGeral = useRef(null)
     const containerTextos = useRef(null)
     const texto1 = useRef(null)
     const img1 = useRef(null)
@@ -49,7 +51,7 @@ export default function Servicos(){
 
         gsap.to(pinImgsContainer.current, {
             scrollTrigger: {
-                trigger: containerGeral.current,
+                trigger: servicosRef.current,
                 start: "top top",
                 end: "105% bottom",
                 pin: pinImgsContainer.current
@@ -111,10 +113,10 @@ export default function Servicos(){
         gsap.to(linhaTempo.current, {
             ease: "none",
             scrollTrigger: {
-                trigger: containerGeral.current,
+                trigger: servicosRef.current,
                 start: "top top",
                 end: "bottom bottom",
-                scrub: 0.2
+                scrub: 1
             },
             clipPath: "polygon(0% 0%,100% 0%,100% 100%,0% 100%)"
         })
@@ -122,7 +124,7 @@ export default function Servicos(){
 
         gsap.to(checkPt1.current, {
             scrollTrigger: {
-                trigger: containerGeral.current,
+                trigger: servicosRef.current,
                 start: vh(58) + " top",
                 toggleActions: "restart none none none"
             },
@@ -131,7 +133,7 @@ export default function Servicos(){
 
         gsap.to(checkPt2.current, {
             scrollTrigger: {
-                trigger: containerGeral.current,
+                trigger: servicosRef.current,
                 start: vh(114) + " top",
                 toggleActions: "restart none none none"
             },
@@ -140,7 +142,7 @@ export default function Servicos(){
 
         gsap.to(checkPt3.current, {
             scrollTrigger: {
-                trigger: containerGeral.current,
+                trigger: servicosRef.current,
                 start: vh(172) + " top",
                 toggleActions: "restart none none none"
             },
@@ -149,7 +151,7 @@ export default function Servicos(){
 
         gsap.to(checkPt4.current, {
             scrollTrigger: {
-                trigger: containerGeral.current,
+                trigger: servicosRef.current,
                 start: vh(228) + " top",
                 toggleActions: "restart none none none"
             },
@@ -158,7 +160,7 @@ export default function Servicos(){
 
         gsap.to(checkPt5.current, {
             scrollTrigger: {
-                trigger: containerGeral.current,
+                trigger: servicosRef.current,
                 start: vh(285) + " top",
                 toggleActions: "restart none none none"
             },
@@ -170,7 +172,7 @@ export default function Servicos(){
 
 
     return(
-        <div ref={containerGeral} className="lg:flex hidden flex-col fundoServicos w-full relative px-paddingXGeral pt-pTopGeral pb-pBottomGeral text-cinzaTexto ">
+        <div ref={servicosRef} className="lg:flex hidden flex-col fundoServicos w-full relative px-paddingXGeral pt-pTopGeral pb-pBottomGeral text-cinzaTexto ">
             <Titulo txtBranco={false} titulo="Serviços"/>
             <div className="absolute left-0 right-0 top-0 h-[200px] [background:linear-gradient(transparent,#dbeaf6)] -translate-y-full"></div>
             <div className="flex ">

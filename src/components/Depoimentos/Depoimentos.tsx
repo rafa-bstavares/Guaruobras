@@ -1,39 +1,21 @@
 import Titulo from "../Titulo/Titulo"
 import aspas from "../../assets/images/aspasGuaru.svg"
 import estrela from "../../assets/images/estrelaGuaru.svg"
-import gsap from "gsap"
-import ScrollTrigger from "gsap/ScrollTrigger"
-import { useGSAP } from "@gsap/react"
-import { useRef } from "react"
+import { RefObject, useRef } from "react"
 
+type Props = {
+    depoimentosRef: RefObject<HTMLDivElement>
+}
 
-
-export default function Depoimentos(){
-
-    gsap.registerPlugin(ScrollTrigger)
-    gsap.registerPlugin(useGSAP)
+export default function Depoimentos({depoimentosRef}: Props){
 
     const fundoAnim = useRef(null)
-    const containerDep = useRef(null)
-
-    useGSAP(() => {
-        ScrollTrigger.normalizeScroll(true)
-
-        gsap.to(fundoAnim.current, {
-            scrollTrigger: {
-                trigger: containerDep.current,
-                start: "50% bottom"
-            },
-            clipPath: "circle(100% at 50% 50%)",
-            duration: 1.5
-        })
-    })
 
 
     return(
-        <div ref={containerDep} className="w-full flex flex-col bg-[#dbeaf6] text-cinzaTexto">
+        <div ref={depoimentosRef} className="w-full flex flex-col bg-[#dbeaf6] text-cinzaTexto">
             <div className="flex flex-col lg:px-paddingXGeral px-paddingXCel pt-pTopGeral lg:pb-pBottomGeral pb-pBottomCel relative">
-                <div ref={fundoAnim} className="flex flex-col lg:items-start items-center absolute inset-0 fundoCarta z-30 px-paddingXGeral pt-pTopGeral pb-pBottomGeral [will-change:clip-path] [clip-path:circle(0%_at_50%_50%)]">
+                <div ref={fundoAnim} className="flex flex-col lg:items-start items-center absolute inset-0 fundoCarta z-30 px-paddingXGeral pt-pTopGeral pb-pBottomGeral [clip-path:circle(100%_at_50%_50%)]">
                     <Titulo txtBranco={true} titulo="Depoimentos"/>
                 </div>
                 <div className="w-full flex lg:justify-start justify-center">

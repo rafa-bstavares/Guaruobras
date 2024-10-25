@@ -1,4 +1,4 @@
-import { useRef } from "react"
+import { RefObject, useRef } from "react"
 import Titulo from "../Titulo/Titulo"
 import gsap from "gsap"
 import ScrollTrigger from "gsap/ScrollTrigger"
@@ -9,18 +9,19 @@ import condoImg from "../../assets/images/condoServicos.jpg"
 import escritorioImg from "../../assets/images/escritorioServicos.jpg"
 import entulhoImg from "../../assets/images/entulhoServicos.jpg"
 import comercioImg from "../../assets/images/comercioServicos.jpg"
+import scroll from "../../assets/images/scroll.svg"
+
+type Props = {
+    servicosMobileRef: RefObject<HTMLDivElement>
+}
 
 
-
-
-
-export default function ServicosCel(){
+export default function ServicosCel({servicosMobileRef}: Props){
 
     gsap.registerPlugin(ScrollTrigger)
     gsap.registerPlugin(useGSAP)
 
     const containerPinado = useRef(null)
-    const containerGeral = useRef(null)
     const containerImgs = useRef(null)
     const containerTxts = useRef(null)
     const img1 = useRef(null)
@@ -38,7 +39,7 @@ export default function ServicosCel(){
         const tl = gsap.timeline({
             ease: "none",
             scrollTrigger: {
-                trigger: containerGeral.current,
+                trigger: servicosMobileRef.current,
                 start: "top top",
                 end: "bottom bottom",
                 scrub: 0.5,
@@ -85,13 +86,13 @@ export default function ServicosCel(){
 
 
     return(
-        <div ref={containerGeral} className="lg:hidden flex flex-col fundoServicosCel w-full pb-pBottomCel h-[600vh] relative">
+        <div ref={servicosMobileRef} className="lg:hidden flex flex-col fundoServicosCel w-full pb-pBottomCel h-[600vh] relative">
             <div ref={containerPinado} className="h-screen flex flex-col w-[90vw] m-[0_auto]">
-                <div className="w-full flex justify-center py-12">
+                <div className="w-full flex justify-center pt-12">
                     <Titulo titulo="Serviços" txtBranco={false}/>
                 </div>
                 <div className="flex flex-col h-full">
-                    <div className="h-full flex flex-col mt-20 gap-20">
+                    <div className="h-full flex flex-col mt-20 gap-14">
                         <div className="flex py-4 rounded-xl bg-white/30 justify-center">
                             <div className="w-[80vw] flex overflow-hidden">
                                 <div ref={containerImgs} className="flex relative ">
@@ -104,7 +105,7 @@ export default function ServicosCel(){
                                 </div>
                             </div>
                         </div>
-                        <div className="flex h-20 ">
+                        <div className="flex ">{/*Tinha um h-20 aqui */}
                             <div ref={containerTxts} className="flex [transform:translateX(-100%)_translateX(90vw)] [will-change:transform]">
                                 <div className="w-[90vw] px-4 py-2 flex flex-col">
                                 <div className="text-center text-xl">
@@ -166,6 +167,10 @@ export default function ServicosCel(){
                           
                         </div>
                     </div>
+                </div>
+                <div className="flex flex-col justify-center items-center pb-8 gap-4 -mt-60 opacity-70">
+                    <div className="text-lg">continue indo para baixo</div>
+                    <img className="w-7 h-7 object-cover animate-bounce" src={scroll} alt="scroll imagem" />
                 </div>
             </div>
         </div>

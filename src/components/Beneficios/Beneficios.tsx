@@ -3,10 +3,16 @@ import estrela from "../../assets/images/estrelaGuaru.svg"
 import relogio from "../../assets/images/relogioGuaru.svg"
 import raio from "../../assets/images/raioGuaru.svg"
 import personalizadoImg from "../../assets/images/quebraCabGuaru.svg"
+import { RefObject } from "react"
 
-export default function Beneficios(){
+type Props = {
+    beneficiosRef: RefObject<HTMLDivElement>
+}
+
+export default function Beneficios({beneficiosRef}: Props){
+
     return (
-        <div className="flex flex-col w-full bg-[#dbe9f5] lg:px-paddingXGeral px-paddingXCel pt-pTopGeral lg:pb-pBottomGeral pb-pBottomCel relative z-30">
+        <div ref={beneficiosRef} className="flex flex-col w-full bg-[#dbe9f5] lg:px-paddingXGeral px-paddingXCel pt-pTopGeral lg:pb-pBottomGeral pb-pBottomCel relative z-30">
             <div className="lg:hidden h-[150px] [background:linear-gradient(to_top,#dbeaf6,transparent)] absolute top-0 -translate-y-[96%] left-0 right-0 "></div>
             <div className="w-full flex lg:justify-start justify-center">
                 <Titulo txtBranco={false} titulo="Benefícios"/>
